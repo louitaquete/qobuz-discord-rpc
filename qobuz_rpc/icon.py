@@ -1,5 +1,6 @@
 """Icone do app (desenhado por codigo: barras de equalizador sobre fundo escuro)."""
 
+import os
 import sys
 
 from PIL import Image, ImageDraw
@@ -29,6 +30,7 @@ def make_image(size=256):
 
 
 def save_ico(path):
+    os.makedirs(os.path.dirname(os.path.abspath(path)), exist_ok=True)
     make_image(256).save(path, format="ICO", sizes=[(16, 16), (24, 24), (32, 32), (48, 48), (64, 64), (128, 128), (256, 256)])
 
 
